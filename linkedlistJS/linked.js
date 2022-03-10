@@ -1,19 +1,18 @@
 class Node {
 	// constructor
 	constructor(element) {
-		this.element = element;
-		this.next = null
+		this.element = element; // Data of the node
+		this.next = null	// Pointer to the next node
 	}
 }
 // linkedlist class
 class LinkedList {
 	constructor() {
-		this.head = null;
-		this.size = 0;
+		this.head = null;	// First node in the list
+		this.size = 0;		// The number of nodes in the list
 	}
 
-	// adds an element at the end
-	// of list
+	// adds an element at the end of list
 	add(element) {
 		// creates a new node
 		var node = new Node(element);
@@ -27,8 +26,7 @@ class LinkedList {
 		else {
 			current = this.head;
 
-			// iterate to the end of the
-			// list
+			// iterate to the end of the list
 			while (current.next) {
 				current = current.next;
 			}
@@ -39,8 +37,7 @@ class LinkedList {
 		this.size++;
 	}
 
-	// insert element at the position index
-	// of the list
+	// insert element at the position index of the list
 	insertAt(element, index) {
 		if (index < 0 || index > this.size)
 			return console.log("Please enter a valid index.");
@@ -195,17 +192,25 @@ ll.printList();
 // returns 1
 console.log(ll.size_of_list());
 
+
 // adding more elements to the list
 ll.add(20);
 ll.add(30);
 ll.add(40);
 ll.add(50);
+ll.add(50);
+ll.add(50);
+ll.add(50);
+
+// returns 8
+console.log(ll.size_of_list());
+
 
 // returns 10 20 30 40 50
 ll.printList();
 
 // prints 50 from the list
-console.log("is element removed ?" + ll.removeElement(50));
+console.log("is element removed ? " + ll.removeElement(50));
 
 // prints 10 20 30 40
 ll.printList();
